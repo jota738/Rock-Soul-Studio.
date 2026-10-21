@@ -1,121 +1,438 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Barbearia Blitz | Barbearia em Parauapebas – PA | Rio Verde</title>
-<meta name="description" content="Barbearia Blitz em Parauapebas–PA, bairro Rio Verde. Cortes modernos e clássicos, barba modelada e sobrancelha. Agende pelo WhatsApp.">
-<meta name="theme-color" content="#0b0b0b">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Barbearia Blitz – Seu estilo. Nosso compromisso.">
-<meta property="og:description" content="Cortes modernos e clássicos em Parauapebas–PA. Agende pelo WhatsApp.">
-<meta property="og:locale" content="pt_BR">
-<link rel="stylesheet" href="css/style.css">
-<!-- Dados a confirmar com o proprietário antes de publicar -->
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"HairSalon","name":"Barbearia Blitz","telephone":"+5594981551611",
-"address":{"@type":"PostalAddress","streetAddress":"Rua Rio de Janeiro, 8","addressLocality":"Parauapebas","addressRegion":"PA","addressCountry":"BR"},
-"openingHours":["Mo-Sa 09:00-20:00"],"sameAs":["https://www.instagram.com/dell_neri_da_barbearia_blitz/"]}
-</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0b0b">
+  <meta name="description" content="Barbearia Rock Soul Studio em Parauapebas, Pará. Conheça nosso estilo e entre em contato.">
+  <title>Rock Soul Studio | Barbearia</title>
+
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --card: #171717;
+      --red: #e52d3b;
+      --white: #fff;
+      --gray: #b6b6b6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1120px, 90%);
+      margin: auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(11,11,11,.96);
+      border-bottom: 1px solid #292929;
+    }
+
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 900;
+      letter-spacing: 1px;
+    }
+
+    .logo span { color: var(--red); }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: .92rem;
+    }
+
+    .nav-links a:hover { color: var(--red); }
+
+    .hero {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(ellipse at 85% 35%, #57151c 0%, transparent 38%),
+        linear-gradient(120deg, #0b0b0b 50%, #211012);
+      padding: 85px 0;
+    }
+
+    .tag {
+      color: #ff6670;
+      text-transform: uppercase;
+      font-size: .8rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    h1 {
+      font-size: clamp(2.8rem, 8vw, 5.5rem);
+      line-height: 1.05;
+      text-transform: uppercase;
+      margin: 18px 0;
+    }
+
+    h1 span, .red { color: var(--red); }
+
+    .hero p {
+      max-width: 570px;
+      color: #d0d0d0;
+      font-size: 1.05rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 20px;
+      border: 1px solid var(--red);
+      border-radius: 4px;
+      font-weight: bold;
+      transition: .2s;
+    }
+
+    .btn-primary {
+      background: var(--red);
+      color: white;
+    }
+
+    .btn:hover { transform: translateY(-3px); }
+
+    section { padding: 78px 0; }
+
+    .section-heading {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin: 8px 0 12px;
+    }
+
+    .muted {
+      color: var(--gray);
+      max-width: 680px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 32px;
+    }
+
+    .service {
+      background: var(--card);
+      border: 1px solid #303030;
+      padding: 25px;
+      border-radius: 7px;
+      transition: .25s;
+    }
+
+    .service:hover {
+      border-color: var(--red);
+      transform: translateY(-4px);
+    }
+
+    .service-icon {
+      font-size: 2rem;
+      color: var(--red);
+    }
+
+    .service h3 { margin: 10px 0; }
+
+    .service p {
+      color: var(--gray);
+      font-size: .94rem;
+    }
+
+    .about {
+      background: #151111;
+      border-top: 1px solid #292020;
+      border-bottom: 1px solid #292020;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 38px;
+      align-items: center;
+    }
+
+    .about-panel {
+      background: linear-gradient(145deg, #45151a, #191919);
+      border: 1px solid #532328;
+      padding: 35px;
+      border-radius: 8px;
+    }
+
+    .about-panel strong {
+      color: var(--red);
+      display: block;
+      font-size: 2rem;
+      line-height: 1.2;
+      margin-bottom: 15px;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid #303030;
+      border-radius: 7px;
+      padding: 24px;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-card p {
+      color: var(--gray);
+      margin: 8px 0 18px;
+    }
+
+    footer {
+      padding: 28px 0;
+      border-top: 1px solid #292929;
+      text-align: center;
+      color: var(--gray);
+      font-size: .85rem;
+    }
+
+    .reveal {
+      animation: appear .7s ease both;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 760px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 16px 0;
+      }
+
+      .nav-links { gap: 10px 16px; }
+
+      .hero { min-height: 500px; }
+
+      .services, .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid { grid-template-columns: 1fr; }
+
+      section { padding: 58px 0; }
+    }
+  </style>
 </head>
+
 <body>
-<a class="skip" href="#conteudo">Ir para o conteúdo</a>
+  <header>
+    <nav class="container">
+      <a class="logo" href="#inicio">ROCK SOUL <span>STUDIO</span></a>
 
-<header class="top" id="topo">
-  <a class="logo" href="#inicio" aria-label="Barbearia Blitz, início">
-    <svg viewBox="0 0 40 24" width="30" height="18" aria-hidden="true"><path d="M2 20 5 6l9 8 6-12 6 12 9-8 3 14z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-    <span>BLITZ</span>
-  </a>
-  <button class="burger" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><i></i><i></i><i></i></button>
-  <nav id="menu" aria-label="Principal">
-    <a href="#inicio">Início</a><a href="#servicos">Serviços</a><a href="#galeria">Galeria</a><a href="#sobre">Sobre</a><a href="#localizacao">Localização</a>
-    <a class="btn btn-gold" href="https://wa.me/5594981551611" data-wa="Olá! Encontrei o site da Barbearia Blitz e gostaria de consultar os horários disponíveis para um corte." target="_blank" rel="noopener noreferrer">AGENDAR HORÁRIO</a>
-  </nav>
-</header>
+      <div class="nav-links">
+        <a href="#inicio">Início</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </div>
+    </nav>
+  </header>
 
-<main id="conteudo">
-<section class="hero" id="inicio">
-  <div class="hero-in">
-    <p class="tag">RIO VERDE · PARAUAPEBAS — PA</p>
-    <h1>BARBEARIA BLITZ</h1>
-    <p class="slogan">SEU ESTILO. NOSSO COMPROMISSO.</p>
-    <p class="lead">Cortes modernos e clássicos, cuidado com os detalhes e atendimento personalizado para você renovar seu visual.</p>
-    <div class="row">
-      <a class="btn btn-gold" href="https://wa.me/5594981551611" data-wa="Olá! Encontrei o site da Barbearia Blitz e gostaria de consultar os horários disponíveis para um corte." target="_blank" rel="noopener noreferrer">AGENDAR PELO WHATSAPP</a>
-      <a class="btn btn-line" href="#servicos">CONHECER SERVIÇOS</a>
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container reveal">
+        <div class="tag">Barbearia • Estilo • Personalidade</div>
+
+        <h1>Seu estilo.<br>Suas <span>regras.</span></h1>
+
+        <p>
+          Mais do que um corte, uma experiência de estilo.
+          Descubra a Rock Soul Studio e encontre um visual
+          que combina com sua personalidade.
+        </p>
+
+        <div class="buttons">
+          <a class="btn btn-primary" href="#contato">Entre em contato</a>
+          <a class="btn" href="#servicos">Conheça os serviços</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicos">
+      <div class="container">
+        <div class="tag">Nosso trabalho</div>
+        <h2 class="section-heading">Estilo em cada <span class="red">detalhe.</span></h2>
+
+        <p class="muted">
+          Consulte a equipe para conhecer os serviços e os valores disponíveis.
+        </p>
+
+        <div class="services">
+          <article class="service">
+            <div class="service-icon">✂</div>
+            <h3>Cortes masculinos</h3>
+            <p>Estilos clássicos e modernos com atenção ao acabamento.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">◈</div>
+            <h3>Degradê</h3>
+            <p>Transições e detalhes para um visual bem definido.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">▰</div>
+            <h3>Barba</h3>
+            <p>Cuidado e alinhamento para complementar seu estilo.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">✦</div>
+            <h3>Acabamento</h3>
+            <p>Detalhes que valorizam o resultado final.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">◉</div>
+            <h3>Estilo personalizado</h3>
+            <p>Converse com a equipe sobre o visual que procura.</p>
+          </article>
+
+          <article class="service">
+            <div class="service-icon">＋</div>
+            <h3>Outros serviços</h3>
+            <p>Entre em contato para confirmar as opções disponíveis.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <div class="container about-grid">
+        <div>
+          <div class="tag">Nossa identidade</div>
+          <h2 class="section-heading">
+            Atitude que combina com <span class="red">você.</span>
+          </h2>
+
+          <p class="muted">
+            A Rock Soul Studio valoriza a personalidade de cada cliente.
+            Um espaço dedicado ao estilo, ao cuidado pessoal e à atenção
+            aos detalhes.
+          </p>
+
+          <div class="buttons">
+            <a class="btn btn-primary" href="#contato">Fale conosco</a>
+          </div>
+        </div>
+
+        <div class="about-panel">
+          <strong>ROCK SOUL<br>STUDIO</strong>
+          <p>Seu estilo faz parte da sua história.</p>
+          <p>Entre em contato para saber mais sobre nossos serviços.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato">
+      <div class="container">
+        <div class="tag">Vamos conversar</div>
+        <h2 class="section-heading">Entre em <span class="red">contato.</span></h2>
+
+        <p class="muted">
+          Fale diretamente com a barbearia para consultar horários,
+          serviços e disponibilidade.
+        </p>
+
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>WhatsApp</h3>
+            <p>Fale diretamente com a equipe.</p>
+            <a class="btn btn-primary whatsapp" href="#">Conversar</a>
+          </div>
+
+          <div class="contact-card">
+            <h3>Instagram</h3>
+            <p>Acompanhe as publicações e novidades.</p>
+            <a class="btn instagram" href="#" target="_blank" rel="noopener">
+              Visitar perfil
+            </a>
+          </div>
+
+          <div class="contact-card">
+            <h3>Localização</h3>
+            <p>Parauapebas — Pará</p>
+            <p>Confirme o endereço com a equipe antes de visitar.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      © <span id="year"></span> Barbearia Rock Soul Studio.
+      Todos os direitos reservados.
     </div>
-    <p class="note">O agendamento é solicitado por conversa no WhatsApp e depende de confirmação da barbearia.</p>
-  </div>
-</section>
+  </footer>
 
-<section id="servicos" class="sec">
-  <h2>ENCONTRE SEU ESTILO</h2>
-  <div class="grid cards">
-    <article class="card"><span class="ico" aria-hidden="true">✂</span><h3>Cortes masculinos</h3><p>Modernos e clássicos, do jeito que combina com você.</p><a href="https://wa.me/5594981551611" data-wa="Olá! Gostaria de saber mais sobre os cortes masculinos da Barbearia Blitz." target="_blank" rel="noopener noreferrer">Consultar no WhatsApp</a></article>
-    <article class="card"><span class="ico" aria-hidden="true">◆</span><h3>Barba modelada</h3><p>Barba alinhada, com desenho e acabamento.</p><a href="https://wa.me/5594981551611" data-wa="Olá! Gostaria de saber mais sobre o serviço de barba modelada." target="_blank" rel="noopener noreferrer">Consultar no WhatsApp</a></article>
-    <article class="card"><span class="ico" aria-hidden="true">╱</span><h3>Sobrancelha</h3><p>Design de sobrancelha na tesoura.</p><a href="https://wa.me/5594981551611" data-wa="Olá! Gostaria de saber mais sobre o serviço de sobrancelha." target="_blank" rel="noopener noreferrer">Consultar no WhatsApp</a></article>
-    <article class="card"><span class="ico" aria-hidden="true">✂</span><h3>Corte na tesoura</h3><p>Precisão e acabamento feitos à mão.</p><a href="https://wa.me/5594981551611" data-wa="Olá! Gostaria de saber mais sobre o corte na tesoura." target="_blank" rel="noopener noreferrer">Consultar no WhatsApp</a></article>
-    <article class="card"><span class="ico" aria-hidden="true">▮</span><h3>Cortes na máquina</h3><p>Degradês e cortes na máquina com cuidado nos detalhes.</p><a href="https://wa.me/5594981551611" data-wa="Olá! Gostaria de saber mais sobre os cortes na máquina." target="_blank" rel="noopener noreferrer">Consultar no WhatsApp</a></article>
-    <article class="card"><span class="ico" aria-hidden="true">★</span><h3>Acabamento e finalização</h3><p>O toque final para sair com o visual completo.</p><a href="https://wa.me/5594981551611" data-wa="Olá! Gostaria de saber mais sobre acabamento e finalização." target="_blank" rel="noopener noreferrer">Consultar no WhatsApp</a></article>
-  </div>
-  <div class="row center">
-    <a class="btn btn-line" href="https://wa.me/5594981551611" data-wa="Olá! Gostaria de saber os preços dos serviços da Barbearia Blitz." target="_blank" rel="noopener noreferrer">PERGUNTAR SOBRE PREÇOS</a>
-    <a class="btn btn-line" href="https://wa.me/5594981551611" data-wa="Olá! Tenho uma dúvida sobre a Barbearia Blitz." target="_blank" rel="noopener noreferrer">TIRAR DÚVIDAS</a>
-  </div>
-</section>
+  <script>
+    // Confirme estes dados com o proprietário antes da publicação.
+    const whatsappNumber = "5594991800071";
+    const instagramUrl =
+      "https://www.instagram.com/barbeariarocksoulstudio/";
 
-<section id="galeria" class="sec alt">
-  <h2>GALERIA</h2>
-  <p class="sub">Fotos reais da Blitz entram aqui. Coloque as imagens em <code>assets/images/</code> e troque os espaços abaixo (veja o LEIAME).</p>
-  <div class="grid gal">
-    <figure class="ph"><div>Cortes modernos</div></figure>
-    <figure class="ph"><div>Degradês e acabamentos</div></figure>
-    <figure class="ph"><div>Cortes clássicos</div></figure>
-    <figure class="ph"><div>Barba e detalhes</div></figure>
-    <figure class="ph"><div>Ambiente</div></figure>
-    <figure class="ph"><div>Equipe</div></figure>
-  </div>
-  <dialog id="lb"><button class="x" aria-label="Fechar">×</button><img alt=""></dialog>
-</section>
+    document.querySelectorAll(".whatsapp").forEach(link => {
+      link.href = "https://api.whatsapp.com/send?phone=5594991800071&utm_source=chatgpt.com" + whatsappNumber;
+      link.target = "_blank";
+      link.rel = "noopener";
+    });
 
-<section id="sobre" class="sec">
-  <h2>ESTILO, RESPEITO E RESULTADO.</h2>
-  <p class="about">A Barbearia Blitz é um espaço dedicado ao estilo, ao cuidado pessoal e à valorização de cada detalhe. Nosso objetivo é oferecer um atendimento atencioso para quem busca renovar o visual e encontrar um estilo que combine com sua personalidade.</p>
-</section>
+    document.querySelectorAll(".instagram").forEach(link => {
+      link.href = instagramUrl;
+    });
 
-<section id="avaliacoes" class="sec alt" hidden>
-  <h2>AVALIAÇÕES</h2>
-  <!-- Só mostre (remova "hidden") com avaliações reais e autorizadas -->
-</section>
-
-<section id="localizacao" class="sec">
-  <h2>ONDE ESTAMOS</h2>
-  <div class="grid info">
-    <div class="card"><h3>Endereço</h3><p>Rua Rio de Janeiro, nº 8<br>Bairro Rio Verde<br>Parauapebas — PA</p>
-      <a class="btn btn-gold" href="https://www.google.com/maps/search/?api=1&query=Barbearia+Blitz+Parauapebas" target="_blank" rel="noopener noreferrer">ABRIR NO GOOGLE MAPS</a></div>
-    <div class="card"><h3>Horários</h3>
-      <table><tr><td>Segunda a sábado</td><td>09h às 20h</td></tr><tr><td>Domingo</td><td>Fechado</td></tr></table></div>
-    <div class="card"><h3>Contato</h3><p>WhatsApp: (94) 98155-1611</p>
-      <a class="btn btn-gold" href="https://wa.me/5594981551611" data-wa="Olá! Encontrei o site da Barbearia Blitz e gostaria de consultar os horários disponíveis para um corte." target="_blank" rel="noopener noreferrer">FALAR NO WHATSAPP</a></div>
-  </div>
-</section>
-
-<section id="instagram" class="sec alt">
-  <h2>ACOMPANHE A BLITZ</h2>
-  <p class="sub">@dell_neri_da_barbearia_blitz</p>
-  <div class="row center"><a class="btn btn-gold" href="https://www.instagram.com/dell_neri_da_barbearia_blitz/" target="_blank" rel="noopener noreferrer">SEGUIR NO INSTAGRAM</a></div>
-</section>
-</main>
-
-<footer class="foot">
-  <a class="logo" href="#topo" aria-label="Voltar ao topo"><span>BARBEARIA BLITZ</span></a>
-  <nav aria-label="Rodapé"><a href="#servicos">Serviços</a><a href="#galeria">Galeria</a><a href="#sobre">Sobre</a><a href="#localizacao">Localização</a>
-  <a href="https://www.instagram.com/dell_neri_da_barbearia_blitz/" target="_blank" rel="noopener noreferrer">Instagram</a></nav>
-  <p>Rua Rio de Janeiro, 8 · Rio Verde · Parauapebas — PA · Seg a sáb, 09h às 20h</p>
-  <p class="small">© <span id="ano"></span> Barbearia Blitz · Desenvolvido por Jotinha CyberLab</p>
-</footer>
-
-<a class="wa-float" href="https://wa.me/5594981551611" data-wa="Olá! Encontrei o site da Barbearia Blitz e gostaria de consultar os horários disponíveis para um corte." target="_blank" rel="noopener noreferrer" aria-label="Chamar no WhatsApp">WhatsApp</a>
-<script src="js/script.js" defer></script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
 </body>
 </html>
